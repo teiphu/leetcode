@@ -1,4 +1,4 @@
-package org.teiphu;
+package com.teiphu;
 
 /**
  * 507. 完美数

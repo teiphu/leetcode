@@ -1,4 +1,4 @@
-package org.teiphu;
+package com.teiphu;
 
 /**
  * 114. 二叉树展开为链表

@@ -1,4 +1,4 @@
-package org.teiphu;
+package com.teiphu;
 
 /**
  * 306. 累加数

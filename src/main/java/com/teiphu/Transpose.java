@@ -1,4 +1,4 @@
-package org.teiphu;
+package com.teiphu;
 
 /**
  * 867. 转置矩阵

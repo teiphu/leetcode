@@ -1,4 +1,4 @@
-package org.teiphu;
+package com.teiphu;
 
 /**
  * 5493. 删除最短的子数组使剩余数组有序

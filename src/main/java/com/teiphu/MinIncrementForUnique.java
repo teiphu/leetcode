@@ -1,4 +1,4 @@
-package org.teiphu;
+package com.teiphu;
 
 import java.lang.reflect.Array;
 import java.util.ArrayDeque;

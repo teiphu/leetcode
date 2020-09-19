@@ -1,7 +1,7 @@
-package org.teiphu;
+package com.teiphu;
 
 /**
- * 秋叶收藏集
+ * LCP 19. 秋叶收藏集
  *
  * @author Zheng Lifu
  */
@@ -9,11 +9,48 @@ public class MinimumOperations {
 
 	public static void main(String[] args) {
 		MinimumOperations mo = new MinimumOperations();
-		int res = mo.minimumOperations("rrryyyrryyyrr");
+		int res = mo.minimumOperations("yry");
 		System.out.println(res);
 	}
 
+	/**
+	 * ryr
+	 *
+	 * @param leaves
+	 * @return
+	 */
 	public int minimumOperations(String leaves) {
+		int[][] dp = new int[3][leaves.length()];
+		for (int i = 0; i < leaves.length(); i++) {
+			if (i - 1 >= 0) {
+				dp[0][i] = dp[0][i - 1];
+			} else {
+				dp[0][i] = 0;
+			}
+			if (leaves.charAt(i) == 'y') {
+				dp[0][i] += 1;
+			}
+			if (i >= 1) {
+				dp[1][i] = Math.min(dp[1][i - 1], dp[0][i - 1]);
+				if (leaves.charAt(i) == 'r') {
+					dp[1][i] += 1;
+				}
+			} else {
+				dp[1][i] = dp[0][i];
+			}
+			if (i >= 2) {
+				dp[2][i] = Math.min(dp[2][i - 1], dp[1][i - 1]);
+				if (leaves.charAt(i) == 'y') {
+					dp[2][i] += 1;
+				}
+			} else {
+				dp[2][i] = dp[1][i];
+			}
+		}
+		return dp[2][leaves.length() - 1];
+	}
+
+	public int minimumOperations1(String leaves) {
 		char[] value = leaves.toCharArray();
 		int x = 0;
 		int min = Integer.MAX_VALUE;

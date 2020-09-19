@@ -1,4 +1,4 @@
-package org.teiphu;
+package com.teiphu;
 
 public class Rob {
 
