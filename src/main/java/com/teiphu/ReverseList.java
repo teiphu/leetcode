@@ -18,20 +18,78 @@ public class ReverseList {
 
         node = root;
         while (node != null) {
-            System.out.println(node.val);
+            System.out.print(node.val + "  ");
             node = node.next;
         }
+        System.out.println();
+
         System.out.println("----------");
 
         ReverseList reverseList = new ReverseList();
-        ListNode head = reverseList.reverseList(root);
+        ListNode head = reverseList.reverseList1(root);
         node = head;
         while (node != null) {
-            System.out.println(node.val);
+            System.out.print(node.val + "  ");
             node = node.next;
         }
+        System.out.println();
     }
 
+    /**
+     * 迭代解法, 自解
+     *
+     * @param head
+     * @return
+     */
+    public ListNode reverseList1(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode node = head.next;
+        ListNode last = head;
+        while (node != null) {
+            ListNode t = node.next;
+            node.next = last;
+            last = node;
+            node = t;
+        }
+        head.next = null;
+        head = last;
+        return head;
+    }
+
+    /**
+     * 递归解法,自解
+     *
+     * @param head
+     * @return
+     */
+    public ListNode reverseList0(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode root = reverse0(head, head.next);
+        return root;
+    }
+
+    public ListNode reverse0(ListNode last, ListNode next) {
+        ListNode root;
+        if (next != null) {
+            root = reverse0(next, next.next);
+        } else {
+            return last;
+        }
+        next.next = last;
+        last.next = null;
+        return root;
+    }
+
+    /**
+     * 递归解法, 另解
+     *
+     * @param head
+     * @return
+     */
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -40,7 +98,7 @@ public class ReverseList {
     }
 
     public ListNode reverse(ListNode node, ListNode next) {
-        ListNode head = null;
+        ListNode head;
         if (next.next != null) {
             head = reverse(next, next.next);
         } else {
