@@ -7,6 +7,13 @@ import java.util.List;
  */
 public class Node {
     public int val;
+
+    public int key;
+
+    public int value;
+
+    public int frequency = 1;
+
     public List<Node> children;
 
     public Node() {}
@@ -20,4 +27,8 @@ public class Node {
         children = _children;
     }
 
+    public Node(int key, int value) {
+        this.key = key;
+        this.value = value;
+    }
 }
