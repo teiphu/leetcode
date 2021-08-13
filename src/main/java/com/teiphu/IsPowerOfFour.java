@@ -3,8 +3,7 @@ package com.teiphu;
 public class IsPowerOfFour {
 
 	public static void main(String[] args) {
-		// TODO �Զ����ɵķ������
-	
+
 		int num = 13;
 		double d = Math.log10(num);
 		System.out.println(d);

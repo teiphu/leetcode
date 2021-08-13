@@ -3,7 +3,6 @@ package com.teiphu;
 public class HammingWeight {
 
 	public static void main(String[] args) {
-		// TODO �Զ����ɵķ������
 		System.out.println(hammingWeight(10));
 	}
 
