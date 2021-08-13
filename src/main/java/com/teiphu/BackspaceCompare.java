@@ -6,7 +6,7 @@ package com.teiphu;
  * @author Teiphu
  * @date 2018年8月15日 下午4:34:21
  */
-public class backspaceCompare {
+public class BackspaceCompare {
 
 	public static void main(String[] args) {
 		// char[] cs = { '0', '1', '2', '3', '4' };
